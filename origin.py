@@ -18,9 +18,10 @@ name = config['Telegram']['username']
 
 git_name = config['Git']['name']
 token = config['Git']['token']
+
 client   = TelegramClient(name, api_id, api_hash)
 
-@client.on(events.NewMessage(chats=("https://t.me/stoprussiachannel")))
+@client.on(events.NewMessage(chats=("https://t.me/testchannel123321te")))
 async def get_channel_messages(data):
     channels = re.findall("https?://t.me/[^\s;,./]+", data.message.message)
     channels = list(set(channels))
@@ -45,6 +46,8 @@ async def get_channel_messages(data):
         system("git add daily_channels.txt")
         system(f'git commit -m "update data for {datetime.now().strftime("%d.%m.%Y %H:%M")}"')
         system('git push')
+        system(git_name)
+        system(token)
         print("download finish\n")
 
 async def main():
