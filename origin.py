@@ -49,7 +49,7 @@ async def main():
     pass
 
 if __name__ == "__main__":
-    system("cls")
+    system("clear")
     print("I run")
     client.start()
     client.run_until_disconnected()
