@@ -16,6 +16,8 @@ api_id   = config['Telegram']['api_id']
 api_hash = config['Telegram']['api_hash']
 name = config['Telegram']['username']
 
+git_name = config['Git']['name']
+token = config['Git']['token']
 client   = TelegramClient(name, api_id, api_hash)
 
 @client.on(events.NewMessage(chats=("https://t.me/stoprussiachannel")))
